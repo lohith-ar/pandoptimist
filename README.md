@@ -1,0 +1,2 @@
+# pandoptimist
+Pandemic Optimization System.
