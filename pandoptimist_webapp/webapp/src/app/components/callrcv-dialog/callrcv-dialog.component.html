@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Incoming call from Patient {{data.from}}</h1>
+<div mat-dialog-actions>
+    <div class="example-button-container" style="margin-top: 10px;">
+        <button mat-fab style="margin-left: 325px;background-color: red;
+       " (click)="onClick(false)" aria-label="Example icon button with a heart icon">
+            <mat-icon>video_call</mat-icon>
+        </button>
+    </div>
+    <div class="example-button-container" style="margin-top: 10px;
+    margin-right: 18px;">
+        <button mat-fab style="     background-color: #4154f1;
+        margin-left: 60px;" (click)="onClick(true)" aria-label="Example icon button with a heart icon" cdkFocusInitial>
+            <mat-icon> video_call</mat-icon>
+        </button>
+    </div>
+</div>

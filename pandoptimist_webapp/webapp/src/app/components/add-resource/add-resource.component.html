@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-tab-group [@.disabled]="true" dynamicHeight>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Add Beds
+                    </ng-template>
+                    <app-bed-request></app-bed-request>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Add Medicine
+                    </ng-template>
+                    <app-medicine-request></app-medicine-request>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Add Equipments
+                    </ng-template>
+                    <app-equipment-request></app-equipment-request>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

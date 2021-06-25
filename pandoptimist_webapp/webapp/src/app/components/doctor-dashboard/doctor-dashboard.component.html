@@ -1,0 +1,145 @@
+<div id="sect1" class="main" style="padding-top: 50px;">
+
+    <div class="container">
+        <div class="container">
+            <div class="container" *ngIf="!condition;">
+
+                <form [formGroup]="healthTipsForm" (ngSubmit)="onSubmit()" class=" bg-white mb-3 border doctor-tips">
+                    <h2 class="title">Health Tips Form.</h2>
+
+
+
+                    <div class="form-group form-field " style="padding-top: 5px;">
+                        <div class="name ">Valuable Advice</div>
+                        <div class="value ">
+                            <div class="input-group ">
+
+                                <textarea formControlName="tips" class="textarea--style-6 " name="message " placeholder="Advices" required></textarea>
+                                <div *ngIf="tips.invalid && tips.touched ">
+                                    <div class="text-danger " *ngIf="tips.errors?.required ">Advice is required</div>
+                                    <div class="text-danger " *ngIf="tips.errors?.pattern || tips.errors?.minlength ">
+                                        Advice must be at least 3 characters</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-submit text-center mt-3 mb-5">
+                        <button color="primary" mat-raised-button class="col-2" type="submit ">Submit</button>
+                    </div>
+                </form>
+
+
+
+            </div>
+
+            <div class="" style="justify-content: center; " *ngIf="condition; ">
+                <mat-card class="example-card">
+                    <mat-card-content style="margin-top: 30px; ">
+                        <marquee behavior="alternate ">
+                            <h3 class="thankyou">Thank you for your Valuable Tip </h3>
+                        </marquee>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+        </div>
+
+
+        <div class="container1" style="height: 200vh;     padding-top: 10px;">
+            <div class="col-md-4 chat-ui ">
+                <button color="primary" class="col-5 inline btn btn-primary mt-2" (click)="makeMeOnline()" style="margin-right: 35px;
+                margin-bottom: 10px;">Make Me Online</button>
+                <button color="primary" class="col-5 inline btn btn-primary mt-2" (click)="loggingOff()" style="
+                margin-bottom: 10px;">Make Me Away</button>
+
+                <div class=" ">
+                    <div class="card ">
+                        <div class="card-header msg_head ">
+                            <div class="d-flex bd-highlight ">
+                                <div class="img_cont ">
+                                    <img src="https://library.kissclipart.com/20190406/cwq/kissclipart-surgeon-icon-png-clipart-computer-icons-clip-art-e1b95eb686c71747.jpg " class="rounded-circle user_img ">
+                                    <span class="online_icon "></span>
+                                </div>
+                                <div class="user_info ">
+                                    <span>Chat with Patient</span>
+                                </div>
+
+                                <div class="example-button-container" style="margin-top: 10px; ">
+                                    <button mat-fab style="background-color: #4154f1" (click)="showModal(false)" aria-label="Example icon button with a heart icon ">
+                                        <mat-icon> video_call</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                            <span id="action_menu_btn "><i class="fas fa-ellipsis-v "></i></span>
+                        </div>
+                        <div class="card-body msg_card_body" *ngFor="let m of messages ">
+                            <div class="d-flex justify-content-end mb-4 " *ngIf="m.username === this.prefilledemail.mail">
+
+                                <!-- <span class="msg_time ">{{m.date}}</span> -->
+                                <div class="msg_cotainer_send ">
+                                    {{m.message}}
+                                    <!-- <span class="msg_time_send ">{{m.date}}</span> -->
+                                </div>
+
+                                <div class=" img_cont_msg ">
+                                    <span></span> <img src="https://library.kissclipart.com/20190406/cwq/kissclipart-surgeon-icon-png-clipart-computer-icons-clip-art-e1b95eb686c71747.jpg " class="rounded-circle user_img_msg ">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-start mb-4" *ngIf="m.username !== this.prefilledemail.mail">
+                                <div class="img_cont_msg ">
+                                    <img src="https://www.clipartmax.com/png/small/268-2681193_standing-man-with-injured-head-and-leg-with-a-crutch-patient-icon.png " class=" rounded-circle user_img_msg ">
+                                </div>
+                                <!-- <span class="msg_time ">{{m.date}}</span> -->
+                                <div class="msg_cotainer_send ">
+                                    {{m.message}}
+                                    <!-- <span class="msg_time_send ">{{m.date}}</span> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer ">
+                            <div class="input-group ">
+                                <div class="input-group-append" style="padding-left: 10px;">
+                                    <!-- <span class="input-group-text attach_btn" style="    height: 38px;"><i class="fas fa-paperclip "
+                                            style="width: 30px; "></i></span> -->
+                                </div>
+                                <!-- <textarea name=" " style="padding-top: 20px; padding-left: 25px; background: white; " class="form-control type_msg " placeholder="Type your message... "></textarea> -->
+                                <div class="input-group-append ">
+                                    <input name="message " autocomplete="off " type="text " [(ngModel)]="messgaeTyped " placeholder="Type Message ... " class=" input-typing form-control" style="padding-right: 60px;">
+                                    <button type="button " class="btn btn-warning btn-flat " [disabled]="!messgaeTyped " (click)="send()" style="height: 39px;">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 vedio-ui" style="padding-top: 70px;">
+                <div class="card-vedio">
+
+
+                    <div class="video-content">
+                        <div class="d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="row" style="width: 90%; line-height: 12; padding-top: 10px;">
+                                <div class="col text-center">
+                                    <div id="video-wrapper">
+                                        <video #remoteVideo id="remote-video" poster="./assets/video-placeholder.jpg" autoplay playsinline></video>
+                                        <video #localVideo id="local-video" autoplay playsinline [muted]=true></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="example-button-container" style="margin-top: 10px;">
+                                    <button mat-fab color="warn" (click)="endCall()" aria-label="Example icon button with a heart icon">
+                                        <mat-icon> call_end</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

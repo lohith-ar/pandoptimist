@@ -1,0 +1,47 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d0d2e0;
+    padding-bottom: 50px;
+}
+
+.doctor-cons {
+    width: 1300px;
+}
+
+.text-style {
+    font-size: 15px;
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+
+.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: red;
+    font-size: 15px;
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+
+
+/* Styles for the active tab label */
+
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: red;
+    font-size: 15px;
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+
+
+/* Styles for the ink bar */
+
+.mat-ink-bar {
+    background-color: green;
+}
