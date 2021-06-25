@@ -14,3 +14,18 @@ through Pandoptimist.
 
 -> Doctors can be able to chat with patients and prescribe medicines to patients based on request of 
 patients. Doctors must register their profiles into platform for serving the people.
+
+### Tools and Technologies used:
+Java8,
+SpringBoot,
+Angular,
+MicroServices,
+RabbitMQ messagebus,
+Docker,
+HTML CSS,
+Spring Cloud gateway
+
+### Databases used:
+MySQL,
+MongoDB,
+Redis
