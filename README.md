@@ -1,4 +1,4 @@
-# Pandemic optimisation system
+# Pandoptimist  [ Pandemic optimisation system ]
 
 ## Description:
 -> Designed and developed an online pandemic optimization platform, Pandoptimist an open-source 
